@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'glossary.bib'
+      - 'glossary.tex'
   workflow_dispatch:
 jobs:
   sync:
@@ -17,12 +17,12 @@ jobs:
             repo_name: security-patch-detection-agent
     runs-on: ubuntu-latest
     steps:
-    - name: Copy bibliography
+    - name: Copy
       uses: andstor/copycat-action@v3
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        src_path: glossary.bib
-        dst_path: glossary.bib
+        src_path: glossary.tex
+        dst_path: glossary.tex
         dst_owner: ${{ matrix.repo_owner }}
         dst_repo_name: ${{ matrix.repo_name }}
         dst_branch: main
