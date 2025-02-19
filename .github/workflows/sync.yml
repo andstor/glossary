@@ -1,0 +1,31 @@
+name: Sync
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'glossary.bib'
+  workflow_dispatch:
+jobs:
+  sync:
+    strategy:
+      matrix:
+        include:
+          - repo_owner: andstor
+            repo_name: paper-template
+          - repo_owner: andstor
+            repo_name: security-patch-detection-agent
+    runs-on: ubuntu-latest
+    steps:
+    - name: Copy bibliography
+      uses: andstor/copycat-action@v3
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        src_path: glossary.bib
+        dst_path: glossary.bib
+        dst_owner: ${{ matrix.repo_owner }}
+        dst_repo_name: ${{ matrix.repo_name }}
+        dst_branch: main
+        src_branch: main
+        username: nutsbot
+        email: andr3.storhaug+bot@gmail.com
