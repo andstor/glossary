@@ -12,7 +12,7 @@ jobs:
       matrix:
         include:
           - repo_owner: andstor
-            repo_name: paper-template
+            repo_name: tex-paper-template
           - repo_owner: andstor
             repo_name: security-patch-detection-agent
     runs-on: ubuntu-latest
