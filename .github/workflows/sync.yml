@@ -15,6 +15,8 @@ jobs:
             repo_name: tex-paper-template
           - repo_owner: andstor
             repo_name: parameter-efficient-fine-tuning-of-large-language-models-for-unit-test-generation-empirical-study
+          - repo_owner: andstor
+            repo_name: agentic-security-patch-classification
     runs-on: ubuntu-latest
     steps:
       - name: Copy
