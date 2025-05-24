@@ -15,17 +15,19 @@ jobs:
             repo_name: tex-paper-template
           - repo_owner: andstor
             repo_name: security-patch-detection-agent
+          - repo_owner: andstor
+            repo_name: parameter-efficient-fine-tuning-of-large-language-models-for-unit-test-generation-empirical-study
     runs-on: ubuntu-latest
     steps:
-    - name: Copy
-      uses: andstor/copycat-action@v3
-      with:
-        personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        src_path: /glossary.tex
-        dst_path: /glossary.tex
-        dst_owner: ${{ matrix.repo_owner }}
-        dst_repo_name: ${{ matrix.repo_name }}
-        dst_branch: main
-        src_branch: main
-        username: nutsbot
-        email: andr3.storhaug+bot@gmail.com
+      - name: Copy
+        uses: andstor/copycat-action@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          src_path: /glossary.tex
+          dst_path: /glossary.tex
+          dst_owner: ${{ matrix.repo_owner }}
+          dst_repo_name: ${{ matrix.repo_name }}
+          dst_branch: main
+          src_branch: main
+          username: nutsbot
+          email: andr3.storhaug+bot@gmail.com
