@@ -18,7 +18,7 @@ jobs:
           - repo_owner: andstor
             repo_name: agentic-security-patch-classification
           - repo_owner: andstor
-            repo_name: toward-realistic-evaluation-llm-based-vulnerability-fix-detection
+            repo_name: toward-realistic-evaluation-of-llm-based-vulnerability-fix-detection
     runs-on: ubuntu-latest
     steps:
       - name: Copy
